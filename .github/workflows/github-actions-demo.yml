@@ -18,6 +18,7 @@ jobs:
           ls ${{ github.workspace }}
       - name: Rar the workload directory and copy the rar file to Downloads
         run: |
+          apt install rar
           rar a wl.rar ${{ github.workspace }}/wl 
           cp wl.rar ${{ github.workspace }}/Downloads
       - run: echo "🍏 This job's status is ${{ job.status }}."
