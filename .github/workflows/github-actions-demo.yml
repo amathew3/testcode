@@ -16,4 +16,7 @@ jobs:
       - name: List files in the repository
         run: |
           ls ${{ github.workspace }}
+      - name: Rar the workload directory and copy the rar file to Downloads
+          rar a wl.rar ${{ github.workspace }}/wl 
+          cp wl.rar ${{ github.workspace }}/Downloads
       - run: echo "🍏 This job's status is ${{ job.status }}."
